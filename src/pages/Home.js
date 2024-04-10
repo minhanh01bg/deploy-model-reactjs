@@ -1,30 +1,15 @@
-import { useState, useEffect } from 'react';
 import  img1  from '../assets/images/wallhaven-1poo61.jpg';
 import img2 from '../assets/images/wallhaven-jxd1x5.jpg';
 import img3 from '../assets/images/wallhaven-jxlwpm.jpg'; 
 import img4 from '../assets/images/wallhaven-werowr.png'; 
 import img5 from '../assets/images/wallhaven-zyp5yo.jpg';
-// import img6 from 'http://localhost:8000/video_feed';
 
 function Home() {
-    // const [data,setData] = useState(1);
-    
-
-    // useEffect(()=>{
-    //     setData(101);
-    // },[data])
-
     return (
         <div className='p-0 m-5'>
-            {/* <div>
-                <h1>Home</h1>
-                <button className='btn btn-primary' onClick={()=> setData(prevCounter => prevCounter-1)}>-</button>
-                <p>{data}</p>
-                <button className='btn btn-primary' onClick={()=> setData(prevCounter => prevCounter+1)}>+</button>
-            </div> */}
             <div className='grid grid-cols-1 gap-4 md:grid-cols-3 my-4'>
               <div className='col-span-2 rounded-lg'>
-								<img src='http://localhost:8000/video_feed' alt='' />
+								{/* <img src='http://localhost:8000/video_feed' alt='' /> */}
 							</div>
               <div className='col-span-1'>
                 <form className="">

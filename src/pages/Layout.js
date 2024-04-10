@@ -1,16 +1,14 @@
-import {NavLink, Link} from 'react-router-dom';
-
 import { Outlet } from "react-router-dom";
 import logo from '../assets/img/icons8-fancy-voxel-48.png';
 import {useState} from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faBlog } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faBlog, faTable } from '@fortawesome/free-solid-svg-icons'
 import '../css/Layout.css';
 import { Sidebar, Navbar, Avatar, Dropdown } from 'flowbite-react';
 import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from 'react-icons/hi';
 
-import { Modal } from 'flowbite'
+
 // import type { ModalOptions, ModalInterface } from 'flowbite'
 
 function Layout() {
@@ -19,14 +17,14 @@ function Layout() {
 	//     setIsClicked(0);
 	// },[])
 	const handleToggle = (index) => {
-    	setIsClicked(index);
+		setIsClicked(index);
 	}
-  const navActivate = (e) => {
-    console.log('e',e);
-  }
+
 	const itemMenu = [
 			{id: 0, name: 'Home', path: '/home', icon: faHouse},
-			{id: 1, name: 'Blogs', path: '/blogs', icon: faBlog}
+			{id: 1, name: 'Blogs', path: '/blogs', icon: faBlog},
+			{id: 2, name: 'Tables', path: '/tables', icon: faTable},
+			{id: 3, name: 'Example', path: '/example', icon: faTable},
 	]
 	return (
 		<>
@@ -38,18 +36,18 @@ function Layout() {
 						<Sidebar.Items>
 								<Sidebar.ItemGroup>
 										{itemMenu.map((item,index) =>(
-												// <NavLink key={item.id} to={item.path} className='text-decoration-none'>
-														<Sidebar.Item
-                              key = {item.id}
-                              href={item.path}
-                              labelColor={isClicked === index ? '':'dark'}
-                              onClick={()=> handleToggle(index)}
-                              className='m-0 pl-0'
-														>
-																<FontAwesomeIcon icon={item.icon} className='me-3 text-black icon'/>
-																{item.name}
-														</Sidebar.Item>
-												// </NavLink>
+												
+											<Sidebar.Item
+												key = {item.id}
+												href={item.path}
+												labelColor={isClicked === index ? '':'dark'}
+												onClick={()=> handleToggle(index)}
+												className='m-0 pl-0'
+											>
+													<FontAwesomeIcon icon={item.icon} className='me-3 text-black icon'/>
+													{item.name}
+											</Sidebar.Item>
+												
 										))}
 										<Sidebar.Item href="#" icon={HiChartPie}>
 												Dashboard
@@ -116,9 +114,9 @@ function Layout() {
 							</button>
 						</form>
 						<Navbar.Collapse className=''>
-              {itemMenu.map((item,index) =>(
-                <Navbar.Link key={item.id} href={item.path}>{item.name}</Navbar.Link>
-              ))}
+			  {itemMenu.map((item,index) =>(
+				<Navbar.Link key={item.id} href={item.path}>{item.name}</Navbar.Link>
+			  ))}
 							{/* <Navbar.Link href="/home" active>Home</Navbar.Link>
 							<Navbar.Link href="/blogs">About</Navbar.Link> */}
 							{/* <Navbar.Link href="#">Services</Navbar.Link>
